@@ -63,6 +63,7 @@ RCT_EXPORT_METHOD(readDir:(NSString *)dirPath
     NSError *fileError = nil;
     NSDictionary *attributes = [fileManager attributesOfItemAtPath:path error:&fileError];
 
+    // handle attributesOfItemAtPath errors
     if (!attributes || fileError) {
       return @{
           @"name": obj,
